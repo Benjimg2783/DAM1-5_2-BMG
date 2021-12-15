@@ -1,6 +1,6 @@
 interface ArmasFuego {
     var municion: Int
-    val municionARestar: Int
+    var municionARestar: Int
     fun disparar() = if (municion >= municionARestar) municion - municionARestar else municion
     fun recargar(r: Int): Int {
         municion += r
@@ -8,9 +8,9 @@ interface ArmasFuego {
     }
 }
 
-class Casa(private val direccion: String, override var municion: Int,override val municionARestar: Int, ) : ArmasFuego
-class Coche(private val matricula: String, override var municion: Int, override val municionARestar: Int) : ArmasFuego
-class Bocadillo(private val sabor:String,override var municion: Int,override val municionARestar: Int):ArmasFuego
+class Casa(private val direccion: String, override var municion: Int,override var municionARestar: Int, ) : ArmasFuego
+class Coche(private val matricula: String, override var municion: Int, override var municionARestar: Int) : ArmasFuego
+class Bocadillo(private val sabor:String,override var municion: Int,override var municionARestar: Int):ArmasFuego
 
 fun main() {
     val casa = Casa("Avd.Segunda Aguanda 10", 30, 5)
